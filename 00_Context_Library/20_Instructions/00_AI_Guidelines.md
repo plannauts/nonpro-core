@@ -40,6 +40,10 @@
 - **20_Singles/** (単発エピソード)
   - 構造: `{Year}/{Year-Month}/{Date}_{Title}/`
 
+### `30_Projects/` (Long-term)
+大学院の授業や長期的な研究開発など、Production（コンテンツ制作）とは異なる長期スパンのプロジェクトを管理します。
+- 構造: `{Project_Name}/00_Planning.md` を起点に各ファイルを配置。
+
 ### `99_Archives/` (Storage)
 - 完了したプロジェクトや、古くなった情報。
 
