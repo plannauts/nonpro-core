@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web記事図解ジェネレーター</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .slide-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .slide-container * {
+            line-height: 1.4;
+        }
+
+        /* デザインテーマ: 誠実でやさしいITカラー（青・水色・白） */
+        .theme-bg {
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+        }
+
+        .theme-accent {
+            color: #0284c7;
+            /* Sky 600 */
+        }
+
+        .theme-text {
+            color: #334155;
+            /* Slate 700 */
+        }
+
+        .highlight {
+            background: linear-gradient(transparent 60%, #bae6fd 60%);
+            padding: 0 4px;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Web記事図解ジェネレーター</h1>
+            <p class="text-slate-600">各画像のボタンを押してダウンロードしてください。</p>
+        </header>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Slide 1: タイトル -->
+            <div class="flex flex-col gap-4">
+                <!-- p-8 -> p-4, mb削減, textサイズ微調整 -->
+                <div id="slide1" class="slide-container theme-bg p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <span class="bg-sky-600 text-white px-4 py-1 rounded-full text-lg font-bold mb-4">隣のAI戦略
+                            01</span>
+                        <h2 class="text-3xl md:text-4xl font-black text-slate-800 leading-tight mb-4">
+                            なぜ僕たちは<br>
+                            AIに<span class="text-sky-600">モヤモヤ</span><br>
+                            してしまうのか？
+                        </h2>
+                        <p class="text-xl md:text-2xl font-bold text-slate-600 leading-snug">
+                            9割が感じる「3つの壁」と<br>
+                            乗り越える処方箋💊
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide1', '01_タイトル.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (01_タイトル.png)
+                </button>
+            </div>
+
+            <!-- Slide 2: 現状 -->
+            <div class="flex flex-col gap-4">
+                <div id="slide2" class="slide-container bg-white p-4 border-4 border-sky-100">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <h3 class="text-2xl md:text-3xl font-bold text-slate-500 mb-2">安心してください😌</h3>
+                        <p class="text-xl md:text-2xl text-slate-700 font-bold mb-4">日常的にAIを使っている人は</p>
+                        <!-- mb-4 -> mb-8 に変更し、重なりを防止 -->
+                        <div class="text-7xl md:text-8xl font-black text-sky-600 mb-8" style="line-height: 1;">
+                            9<span class="text-3xl md:text-4xl text-slate-700 ml-2">%</span>
+                        </div>
+                        <p
+                            class="text-lg md:text-xl font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-xl leading-snug">
+                            あなたはマイノリティでは<br>ありません🤝
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide2', '02_現状データ.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (02_現状データ.png)
+                </button>
+            </div>
+
+            <!-- Slide 3: 3つの壁 -->
+            <div class="flex flex-col gap-4">
+                <div id="slide3" class="slide-container theme-bg p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <h3 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4 border-b-4 border-sky-400 pb-1">
+                            モヤモヤの正体「3つの壁」🏢
+                        </h3>
+                        <!-- space-y削減, padding削減 -->
+                        <div class="w-full space-y-2 px-2 md:px-8">
+                            <div class="flex items-center bg-white p-2 md:p-3 rounded-xl shadow-sm">
+                                <span class="text-3xl mr-3">🌊</span>
+                                <span class="text-lg md:text-2xl font-bold text-slate-700 text-left">1.
+                                    環境（情報多すぎ💦）</span>
+                            </div>
+                            <div class="flex items-center bg-white p-2 md:p-3 rounded-xl shadow-sm">
+                                <span class="text-3xl mr-3">💗</span>
+                                <span class="text-lg md:text-2xl font-bold text-slate-700 text-left">2.
+                                    心理（正解主義🙅‍♂️）</span>
+                            </div>
+                            <div class="flex items-center bg-white p-2 md:p-3 rounded-xl shadow-sm">
+                                <span class="text-3xl mr-3">🏃‍♂️</span>
+                                <span class="text-lg md:text-2xl font-bold text-slate-700 text-left">3.
+                                    行動（使い道は？🤔）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide3', '03_3つの壁.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (03_3つの壁.png)
+                </button>
+            </div>
+
+            <!-- Slide 4: 環境のモヤモヤ -->
+            <div class="flex flex-col gap-4">
+                <div id="slide4" class="slide-container bg-sky-50 p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <!-- アイコンサイズ縮小, mb削減 -->
+                        <div class="text-5xl mb-2">🌊</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-sky-700 mb-3">環境のモヤモヤ</h3>
+                        <p class="text-xl md:text-2xl font-bold text-slate-700 leading-snug mb-3">
+                            情報のスピードが<br>
+                            <span class="highlight">速すぎる＆多すぎる！</span>
+                        </p>
+                        <p class="text-lg md:text-xl font-bold text-slate-500 leading-snug">
+                            「最新を追わなきゃ」と<br>
+                            疲弊していませんか？😓
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide4', '04_環境のモヤモヤ.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (04_環境のモヤモヤ.png)
+                </button>
+            </div>
+
+            <!-- Slide 5: 心理のモヤモヤ -->
+            <div class="flex flex-col gap-4">
+                <div id="slide5" class="slide-container bg-red-50 p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <div class="text-5xl mb-2">💗</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-red-700 mb-3">心理のモヤモヤ</h3>
+                        <p class="text-xl md:text-2xl font-bold text-slate-700 leading-snug mb-3">
+                            真面目な日本人特有の<br>
+                            <span class="highlight"
+                                style="background: linear-gradient(transparent 60%, #fecaca 60%);">「正解主義」の呪縛</span>
+                        </p>
+                        <p class="text-lg md:text-xl font-bold text-slate-500 leading-snug">
+                            AIの嘘が怖い、<br>
+                            自信が持てない…😣
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide5', '05_心理のモヤモヤ.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (05_心理のモヤモヤ.png)
+                </button>
+            </div>
+
+            <!-- Slide 6: 行動のモヤモヤ -->
+            <div class="flex flex-col gap-4">
+                <div id="slide6" class="slide-container bg-emerald-50 p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <div class="text-5xl mb-2">🏃‍♂️</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-emerald-700 mb-3">行動のモヤモヤ</h3>
+                        <p class="text-xl md:text-2xl font-bold text-slate-700 leading-snug mb-3">
+                            「何でもできる」と言われると<br>
+                            <span class="highlight"
+                                style="background: linear-gradient(transparent 60%, #a7f3d0 60%);">何をしていいかわからない🤷</span>
+                        </p>
+                        <p class="text-lg md:text-xl font-bold text-slate-500 leading-snug">
+                            AIは指示待ちのまま、<br>
+                            ただの空欄で待機中…
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide6', '06_行動のモヤモヤ.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (06_行動のモヤモヤ.png)
+                </button>
+            </div>
+
+            <!-- Slide 7: 解決策 -->
+            <div class="flex flex-col gap-4">
+                <div id="slide7" class="slide-container theme-bg p-4 border-4 border-white">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <div class="text-5xl mb-2">💡</div>
+                        <h3 class="text-2xl md:text-3xl font-black text-sky-700 mb-3">解決策：孫子の兵法</h3>
+                        <p
+                            class="text-xl md:text-2xl font-bold text-slate-800 leading-snug mb-4 bg-white px-6 py-3 rounded-xl shadow-sm">
+                            彼を知り己を知れば<br>
+                            百戦殆うからず
+                        </p>
+                        <p class="text-lg md:text-xl font-bold text-slate-600 leading-snug">
+                            敵（AIの特性）と<br>
+                            己（自分の心理）を知れば<br>
+                            もう怖くありません！✨
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide7', '07_解決策.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (07_解決策.png)
+                </button>
+            </div>
+
+            <!-- Slide 8: まとめ -->
+            <div class="flex flex-col gap-4">
+                <div id="slide8" class="slide-container bg-slate-800 p-4 border-4 border-slate-700">
+                    <div class="flex flex-col items-center justify-center h-full w-full">
+                        <span class="text-4xl md:text-5xl mb-2">🤝</span>
+                        <h3 class="text-2xl md:text-3xl font-black text-white mb-4">焦らなくて大丈夫。</h3>
+                        <p class="text-xl md:text-2xl font-bold text-slate-200 leading-snug mb-4">
+                            モヤモヤを晴らして<br>
+                            AIを<span class="text-sky-400">「良きパートナー」</span>に<br>
+                            していきましょう！
+                        </p>
+                        <p class="text-lg md:text-xl font-bold text-white bg-sky-600 px-6 py-2 rounded-full">
+                            詳しくはnoteで👇
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide8', '08_まとめ.png')"
+                    class="bg-slate-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-slate-700 transition w-full">
+                    画像をダウンロード (08_まとめ.png)
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        async function downloadImage(elementId, fileName) {
+            const element = document.getElementById(elementId);
+
+            try {
+                // フォントの読み込み完了を待つ
+                await document.fonts.ready;
+
+                // html2canvasの設定: scaleを上げて高画質化
+                const canvas = await html2canvas(element, {
+                    scale: 2, // 解像度を2倍に（Retina対応など）
+                    useCORS: true,
+                    backgroundColor: null, // 背景色を維持
+                    onclone: (clonedDoc) => {
+                        // クローンされた要素のスタイルを調整
+                        const clonedElement = clonedDoc.getElementById(elementId);
+                        if (clonedElement) {
+                            // line-heightを明示的に指定してズレを防止
+                            const allTextElements = clonedElement.querySelectorAll('*');
+                            allTextElements.forEach(el => {
+                                const computedStyle = window.getComputedStyle(el);
+                                el.style.lineHeight = computedStyle.lineHeight;
+                            });
+                        }
+                    }
+                });
+
+                // ダウンロードリンクの作成と実行
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+            } catch (error) {
+                console.error('画像の生成に失敗しました:', error);
+                alert('画像のダウンロードに失敗しました。もう一度お試しください。');
+            }
+        }
+    </script>
+</body>
+
+</html>
