@@ -12,7 +12,7 @@
 | エージェント | 役割 (Role) | 具体的な担当領域 |
 | :--- | :--- | :--- |
 | **Human (あなた)** | Publisher / PM | 企画決定、最終承認、Goサイン。 |
-| **Antigravity**<br>(Gemini 3 Pro) | Director & Lead | **メインの作業場所**。<br>執筆、コーディング（図解）、構成案作成、コンテキストに基づいた制作。 |
+| **Antigravity**<br>(Gemini 3 Pro) | Director & CSO | **メインの作業場所**。<br>戦略策定、執筆、コーディング。行動指針は `CSO_Persona.md` に準拠。 |
 | **Claude Code**<br>(Claude Sonnet 4.5) | Ops / Librarian | **裏方の管理人**。<br>Inboxの自動整理、大量ファイルの一括リネーム、Gitトラブルの解決。 |
 | **Obsidian**<br>(App) | Viewer / Monitor | **閲覧専用**。<br>グラフによる発想の結合、記事のプレビュー確認、スマホでのメモ入力。 |
 

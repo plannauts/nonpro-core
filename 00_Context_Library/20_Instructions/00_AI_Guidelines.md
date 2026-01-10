@@ -26,7 +26,11 @@
 ここには「成果物」ではなく「資産（ルール・知識）」のみを格納します。
 - **10_Knowledge/**: 会社情報、サービス仕様、用語集。
   - `00_Core/`: システム設計書など、プロジェクトの根幹。
-- **20_Instructions/**: **(Current Dir)** AIへの役割定義、作業プロンプト、チェックリスト。
+- **20_Instructions/**: **(Current Dir)** AIへの役割定義、作業プロンプト。
+    - `CSO_Instructions.md`: **重要** 戦略パートナー(Antigravity)の行動指針。
+    - `00_AI_Guidelines.md`: このファイル。全エージェント共通ルール。
+    - `podcast_script_maker.md`, `note_article_maker.md`: コンテンツ制作プロンプト。
+    - `infographic_maker.md`, `image_creation_instructions.md`: クリエイティブ制作。
 - **30_Formats/**: JSONスキーマ、スライド雛形、コード規約。
 
 ### `10_Inbox/` (Drafts)
