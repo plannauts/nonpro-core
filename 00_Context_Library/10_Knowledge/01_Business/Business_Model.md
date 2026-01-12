@@ -1,41 +1,79 @@
-# Business Model & Ecosystem
+# Business Model: The Mechanism (As-Is)
 
-**Last Updated:** 2026-01-11
-**Status:** Knowledge Buffer (Update as needed)
+**Last Updated:** 2026-01-12
+**Status:** ✅ V1.1 (Refined based on User Corrections)
+**Purpose:** To objectively describe the current value creation, delivery, and capture mechanisms.
 
 ---
 
-## 1. Overview
-個人向け（コミュニティ）を圧倒的な主軸とし、B2Bと出版が補完する構成。
-「高橋氏（Solo Core）」と「コミュニティメンバーへの業務委託（Trusted Periphery）」のハイブリッド体制で運営。
+## 1. Executive Summary (The Engine)
+**"Community-Led Value Circulation"**
+個人（B2C）と法人（B2B）を「学習コミュニティ」で接続する循環型モデル。
+外部からの集客よりも、思想への共感を通じた「深い関係性」の構築と、コミュニティ内部での価値循環（学習→実践→還元）に重きを置く。
 
-*   **年商規模:** 約2,000万円
-*   **拠点:** 福岡県糸島市（フルリモート＋オフラインイベント）
+---
 
-## 2. Revenue Structure
+## 2. Business Portfolio & Revenue (The Stats)
+*Based on Actual Data (FY2025)*
 
-**比率:** コミュニティ 70% : B2B 15% : 書籍印税 15%
+| Unit | Role | Revenue Model | Ratio | Key Metrics (KPIs) |
+| :--- | :--- | :--- | :--- | :--- |
+| **1. Community**<br>(ノンプロ研) | **Core Engine**<br>安定収益・R&D・人材育成 | **Subscription**<br>月額会費 (Stripe) | **70%** | ・会員数<br>・ロイヤルティ (NPS)<br>・イベント参加率 |
+| **2. Corporate**<br>(プランノーツ/協会) | **Validator**<br>社会実装・社会的信頼 | **Project / Fee**<br>研修費・コンサル料 | **17%** | ・研修受講数<br>・リピート率<br>・越境学習導入社数 |
+| **3. Content / IP**<br>(書籍・執筆) | **Branding**<br>信頼獲得・権威性 | **Royalty**<br>印税 | **13%** | ・発行部数<br>・Amazonランキング<br>・ロングセラー率 |
+| **4. Media**<br>(Note/Podcast/Blog) | **Touchpoints**<br>認知・共感・関係性構築 | **N/A**<br>集客装置として運用 | **~0%** | ・フォロワー数<br>・視聴維持率<br>・エンゲージメント率 |
 
-| 事業レイヤー | 具体的内容 | 収益モデル | 実態・戦略的意図 |
-| :--- | :--- | :--- | :--- |
-| **1. コミュニティ事業**<br>(B2C・ストック) | **ノンプロ研**運営<br>関連講座 | 月額会費 + 講座料 | **売上の約70% (約1,400万円)**<br>経営の絶対的支柱。B2Bや出版もここからの派生・還元が基本。 |
-| **2. 法人事業**<br>(B2B・フロー) | **越境学習支援**<br>DX研修、コンサル | プロジェクト単価 | **売上の約15% (約300万円)**<br>収益の柱というよりは、「社会実装」の実証実験・事例作りの場としての意味合いが強い。 |
-| **3. 出版・執筆**<br>(ブランディング) | 商業出版 | 印税 | **売上の約15% (約300万円)**<br>権威性（Brand）確立と、新規層へのリーチ（集客）を兼ねる。 |
-| **4. メディア・広告**<br>(B2C/B2B・集客) | ブログ「いつも隣にITのお仕事」<br>Voicy/Podcast | 広告、アフィリエイト | **収益は限定的**<br>収益源ではなく「集客装置（トップオブファネル）」として機能。 |
+---
 
-## 3. Ecosystem Flywheel
+## 3. Operational Structure: The Value Loop
+「教える/教わる」の境界が溶けた、完全な内部循環モデル。
 
-1.  **Lead Generation:** ブログ/書籍/Voicyで「思想」に共感する層を集める。
-2.  **Nurturing:** 「ノンプロ研」で学習し、ファン化・戦力化する。
-3.  **Monetization & Impact:** 育ったメンバーと共にB2B案件やイベント運営を行い、収益と社会的インパクトを生む。
-4.  **Re-investment:** 得られた知見を再びコンテンツ化・メソッド化し、1に戻る。
+### A. The Organic Entry (共感による参入)
+*   **Media Mix:**
+    *   **Text:** Note (Main), ブログ (Sub), SNS, 書籍。
+    *   **Audio:** Podcast (Focus since 2025/11), Voicy (Legacy).
+    *   **Real:** ノンプロキャンプ、各種イベント。
+*   **Customer Journey:**
+    *   特定の「入り口」はなく、複数の接点（Cross-Media）でタカハシ氏の「思想」に触れ、なんとなく認知（Warm Cognition）した状態で、「機が熟した時」に入会する。
+    *   **Keyword:** "Unconscious Inbound"（いつの間にか知っていて、ファンになっている）。
 
-## 4. Marketing Strategy & Market Shifts
+### B. Internal Circulation (コミュニティ内循環)
+*   **Place:** ノンプロ研
+*   **Cycle:**
+    1.  **Learner:** 初学者が質問し、学ぶ。
+    2.  **Practitioner:** 学んだことを職場で使い、成果を出す。
+    3.  **Teacher/Mentor:** 成果を出したメンバーが、今度はコミュニティ内で講座の講師やTA、運営スタッフとして活躍する（Re-investment）。
+*   **Role:** 法人へのデリバリー要員養成ではなく、**コミュニティ自体の価値と熱量を高め続ける永久機関**として機能。
 
-**「集客（SEO）」から「関係性（Community）」への構造転換の背景**
+---
 
-| Period | Internal Strategy (Focus) | External Environment (Threats) | Outcome / State |
-| :--- | :--- | :--- | :--- |
-| **Phase 1 (~2020)**<br>SEO Golden Age | **SEO & Tech Method (Pull)**<br>ブログでの技術情報発信に注力。<br>「How」の提供によるPV成長。 | テキスト検索が学習の主流。<br>競合サイトはまだ限定的。 | **集客の最大化 (Peak)**<br>技術ブログのPVがピークに達する。<br>圧倒的な流入シェアを獲得。 |
-| **Phase 2 (2021-2022)**<br>Pivot to Value | **Voice & Philosophy (Push)**<br>関心が「技術」から「働き方」へ。<br>音声(Voicy)で啓蒙的な発信を開始。 | **Visual Shift:** YouTube/Udemyの台頭。<br>**Red Ocean:** 技術系ブログの乱立。 | **SEOの頭打ち (Plateau)**<br>技術クエリのシェア低下。<br>集客チャネルの分散化が始まる。 |
-| **Phase 3 (2023-)**<br>AI Disruption | **Generative AI & Community**<br>「コードを書く」価値の低下を見越し、<br>AI活用とコミュニティ体験へシフト。 | **Generative AI:** "Search"から"Generate"へ。<br>初歩的な技術情報の価値が暴落。 | **Deepening (深化)**<br>「数」の追及を捨て、「濃いファン」との<br>関係性維持・LTV向上へ完全移行。 |
+## 4. Cost Structure & Bottlenecks (The Reality)
+
+### Cost Structure (Redistribution Model)
+**Community-First Allocation**
+売上総利益の多くを、コミュニティ運営に関わるメンバーへの業務委託費として還元・循環させている。
+*   **SG&A Ratio:** **92.7%**
+*   **Major Expenses (vs Gross Profit):**
+    *   **Outsourcing:** **33%** (To Community Members)
+    *   **Founder Comp:** **17%**
+
+### Structural Consraints (構造的制約)
+*   **Founder's Policy (The Anchor):**
+    *   「お金のための活動」や「思想に反する拡大」は、Founderのモチベーション（エンジンの駆動力）を低下させる最大リスク要因。
+    *   したがって、マーケティングROIに基づく機械的なスケール施策は採用しづらい（採用しない）。
+*   **Resource Allocation:**
+    *   集客にリソースをかけても、ターゲットピタリの層（思想への共感者）以外は定着しないため、量的な拡大戦略（Mass Marketing）は機能しない可能性がある。
+*   **Note:** 「自然増しか望みがない」わけではなく、**「思想と整合する形での接点拡大（例：Nonprofit向け無償プラン等）」**には可能性がある（戦略フェーズで要検討）。
+
+---
+
+## 5. Customer Segments (The Who)
+
+### B2C (Community Members)
+*   **Primary:** 30-40代のバックオフィス業務従事者。
+*   **Motivation:** スキルアップへの渇望に加え、「孤独の解消」や「良質な居場所」を求めている。
+
+### B2B (Corporate Clients)
+*   **Entry Path:** Web問い合わせ、知人紹介（Referral）。
+*   **Needs:** 組織変革、DX人材育成。
+*   **Note:** 法人側も「思想」への共感が契約の前提となるケースが多いと推測される。
