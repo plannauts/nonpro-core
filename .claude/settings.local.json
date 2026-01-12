@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nCSO指示書の更新とナレッジベースの再構成\n\n- CSO_Instructions.mdを戦略的スタンスと行動指針を重視した内容に更新\n- system_design.mdでAntigravityの役割を「Director & CSO」に明確化\n- Identity.mdとビジネス・アセット関連のナレッジを追加\n- 2026年売上改善計画のリサーチ構造を整理・再編成\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nCSO指示書の更新とナレッジベースの再構成\n\n- CSO_Instructions.mdを戦略的スタンスと行動指針を重視した内容に更新\n- system_design.mdでAntigravityの役割を「Director & CSO」に明確化\n- Identity.mdとビジネス・アセット関連のナレッジを追加\n- 2026年売上改善計画のリサーチ構造を整理・再編成\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
