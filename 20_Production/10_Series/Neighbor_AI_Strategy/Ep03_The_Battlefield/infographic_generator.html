@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 3 Infographic Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        .slide-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .slide-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+            /* Reduced padding from 2rem */
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Increased opacity */
+            border-radius: 1rem;
+            padding: 1.25rem;
+            /* Reduced padding */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            /* Ensure text is above */
+        }
+
+        /* Ensure emojis and text don't overlap strangely */
+        .emoji-icon {
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold mb-8 text-center text-gray-800">Episode 3 Infographic Generator</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Slide 1: Title -->
+            <div class="space-y-4">
+                <div id="slide1" class="slide-container rounded-lg shadow-lg">
+                    <div class="slide-content bg-gradient-to-br from-indigo-900 to-slate-800 text-white relative z-0">
+                        <!-- Background Accent -->
+                        <div class="absolute top-0 right-0 p-8 opacity-10 text-8xl z-0">🌩️</div>
+
+                        <div class="z-10 relative">
+                            <p class="text-lg text-yellow-400 font-bold tracking-widest mb-2">#0036 Neighbor AI Strategy
+                            </p>
+                            <h1 class="text-4xl font-black leading-tight mb-6"> <!-- Reduced from 5xl -->
+                                AI時代は<br>
+                                <span class="text-red-500">「戦場」</span>である
+                            </h1>
+                            <div class="border-l-4 border-yellow-400 pl-6">
+                                <p class="text-xl font-bold">平時ではなく、</p> <!-- Reduced from 2xl -->
+                                <p class="text-xl">ルールの変わる戦地へ</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-6 text-xs opacity-60">いつも隣におしごとラジオ</div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide1', '01_title.png')"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (Title)
+                </button>
+            </div>
+
+            <!-- Slide 2: Speed -->
+            <div class="space-y-4">
+                <div id="slide2" class="slide-container rounded-lg shadow-lg">
+                    <div class="slide-content text-slate-800">
+                        <h2 class="text-2xl font-black mb-4 text-red-600 flex items-center"> <!-- Reduced sizes -->
+                            <span class="mr-2 emoji-icon">🚀</span> 圧倒的な進軍速度
+                        </h2>
+                        <div class="grid grid-cols-1 gap-3"> <!-- Reduced gap -->
+                            <div class="highlight-box bg-white border-l-8 border-red-500">
+                                <p class="text-xs text-gray-500 mb-1">1億ユーザー到達まで</p>
+                                <div class="flex items-end">
+                                    <span class="text-4xl font-black text-slate-900">2ヶ月</span>
+                                    <!-- Reduced from 5xl -->
+                                    <span class="ml-3 text-lg font-bold text-red-600">ChatGPT (電撃戦)</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-white/60 rounded-lg p-3">
+                                    <p class="text-xs text-gray-500">TikTok</p>
+                                    <p class="text-xl font-bold">9ヶ月</p>
+                                </div>
+                                <div class="bg-white/60 rounded-lg p-3">
+                                    <p class="text-xs text-gray-500">Instagram</p>
+                                    <p class="text-xl font-bold">2.5年</p>
+                                </div>
+                            </div>
+                            <p
+                                class="text-lg font-bold text-center mt-1 bg-slate-200 py-1.5 rounded-full z-10 relative">
+                                "生物として追いつけないのは当然"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide2', '02_speed.png')"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (Speed)
+                </button>
+            </div>
+
+            <!-- Slide 3: Firepower -->
+            <div class="space-y-4">
+                <div id="slide3" class="slide-container rounded-lg shadow-lg">
+                    <div class="slide-content text-slate-800">
+                        <h2 class="text-2xl font-black mb-4 text-orange-600 flex items-center">
+                            <span class="mr-2 emoji-icon">💣</span> 実弾の「火力」
+                        </h2>
+                        <div class="highlight-box bg-white mb-4 border-2 border-orange-100">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-black text-white px-2 py-0.5 text-xs font-bold rounded mr-2">CASE</span>
+                                <span class="text-xl font-bold">Klarna (クラーナ)</span>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start text-lg font-bold"> <!-- Reduced size -->
+                                    <span class="text-orange-500 mr-2 mt-1">▶</span>
+                                    <span>AIが700人分の仕事を代替</span>
+                                </li>
+                                <li class="flex items-start text-lg font-bold">
+                                    <span class="text-orange-500 mr-2 mt-1">▶</span>
+                                    <span>利益4,000万ドル(約60億)改善</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-slate-800 to-slate-700 text-white p-4 rounded-xl text-center shadow-lg relative z-10">
+                            <p class="text-xs opacity-80 mb-1">経営者のリアルな選択肢</p>
+                            <p class="text-xl font-black">「人を雇うか、AIを使うか」</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide3', '03_firepower.png')"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (Firepower)
+                </button>
+            </div>
+
+            <!-- Slide 4: Structure -->
+            <div class="space-y-4">
+                <div id="slide4" class="slide-container rounded-lg shadow-lg">
+                    <div class="slide-content text-slate-800">
+                        <h2 class="text-2xl font-black mb-4 text-indigo-700 flex items-center">
+                            <span class="mr-2 emoji-icon">🌋</span> ブームではなく地殻変動
+                        </h2>
+                        <div class="flex justify-center items-center space-x-2 mb-6">
+                            <div class="text-center">
+                                <div class="text-4xl mb-1">🚂</div>
+                                <div class="font-bold text-sm">蒸気機関</div>
+                            </div>
+                            <div class="text-2xl text-gray-400">=</div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-1">🤖</div>
+                                <div class="font-bold text-indigo-700 text-sm">AI (GPT)</div>
+                            </div>
+                            <div class="text-2xl text-gray-400">=</div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-1">💡</div>
+                                <div class="font-bold text-sm">電気</div>
+                            </div>
+                        </div>
+                        <div class="highlight-box bg-white text-center mb-4">
+                            <p class="text-lg font-bold mb-1">汎用技術 (General Purpose Technology)</p>
+                            <p class="text-sm text-gray-600">社会構造そのものを不可逆的に変える</p>
+                        </div>
+                        <p class="text-center text-lg font-bold text-indigo-900 relative z-10">
+                            「気候が変わったのに、<br>嵐が過ぎるのを待っていないか？」
+                        </p>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide4', '04_structure.png')"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (Structure)
+                </button>
+            </div>
+
+            <!-- Slide 5: Conclusion -->
+            <div class="space-y-4">
+                <div id="slide5" class="slide-container rounded-lg shadow-lg">
+                    <div class="slide-content bg-slate-900 text-white text-center relative overflow-hidden z-0">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 text-8xl z-0">🛡️</div>
+
+                        <div class="relative z-10">
+                            <p class="text-xl font-bold mb-6 text-gray-300">絶望する必要はない。</p>
+
+                            <div class="mb-8">
+                                <p class="text-lg mb-2">丸腰で戦場に立ち、竹槍で戦車に挑むな。</p>
+                                <h2 class="text-3xl font-black text-yellow-400">「戦略」を持て。</h2>
+                            </div>
+
+                            <div class="bg-white/10 p-3 rounded-lg inline-block">
+                                <p class="text-xs mb-1">次回のエピソード</p>
+                                <p class="text-xl font-bold">「賢い無視」の戦略</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-4 w-full text-center text-xs opacity-50">
+                            #0036 AI時代は「戦場」である
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide5', '05_conclusion.png')"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (Conclusion)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadImage(elementId, fileName) {
+            const element = document.getElementById(elementId);
+
+            // Clone the element to a hidden container to capture full resolution without scroll issues
+            const clone = element.cloneNode(true);
+            const container = document.createElement('div');
+
+            // Setup hidden container - Positioned off-screen but valid for rendering
+            // Avoiding z-index: -9999 as it can cause stacking context issues with backgrounds
+            container.style.position = 'fixed';
+            container.style.left = '-9999px';
+            container.style.top = '0';
+            container.style.width = element.offsetWidth + 'px';
+            container.style.height = element.offsetHeight + 'px';
+            // Use a high z-index to ensure it sits "above" body background in the rendering stack (even if offscreen)
+            container.style.zIndex = '10000';
+
+            container.appendChild(clone);
+            document.body.appendChild(container);
+
+            html2canvas(clone, {
+                scale: 3, // High resolution
+                backgroundColor: null,
+                useCORS: true,
+                logging: false
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+                // Cleanup
+                document.body.removeChild(container);
+            }).catch(err => {
+                console.error('Error generating image:', err);
+                alert('画像の生成に失敗しました。');
+                if (document.body.contains(container)) {
+                    document.body.removeChild(container);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
