@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ep04 Infographic Generator (2-Column Final)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1a365d',   // Dark Blue
+                        secondary: '#2b6cb0', // Medium Blue
+                        accent: '#ecc94b',    // Yellow
+                        bg: '#f7fafc',        // Light Gray
+                        text: '#2d3748',      // Dark Gray
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slide-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25rem;
+            /* Reduced default padding slightly */
+        }
+
+        .highlight-box {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800">Ep04 Infographic Generator (2-Column
+            Final)</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Slide 1: Title -->
+            <div class="flex flex-col gap-4">
+                <div id="slide1" class="slide-container rounded-lg">
+                    <div class="slide-content bg-gradient-to-br from-primary to-secondary text-white relative p-6">
+                        <div class="absolute top-4 right-4 text-6xl opacity-20">🗺️</div>
+                        <div class="absolute bottom-4 left-4 text-6xl opacity-20">🧭</div>
+
+                        <div class="z-10 w-full">
+                            <span
+                                class="bg-accent text-primary px-3 py-1 rounded-full text-sm md:text-base font-bold mb-4 inline-block">Neighbor
+                                AI Strategy #0037</span>
+
+                            <h2 class="text-lg md:text-xl font-bold text-gray-200 mb-2">戦略の核心は</h2>
+                            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6">
+                                「彼を知り、<br>
+                                <span class="text-accent underline decoration-4 underline-offset-8">己を知る</span>」
+                            </h1>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl py-2 px-6 inline-block">
+                                <p class="text-base md:text-lg font-bold">AI時代を生き抜く「地図」を手に入れよう</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide1', '01_タイトル.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (01_タイトル.png)
+                </button>
+            </div>
+
+            <!-- Slide 2: The Problem (Fixed Overflow) -->
+            <div class="flex flex-col gap-4">
+                <div id="slide2" class="slide-container rounded-lg border-4 border-gray-200">
+                    <div class="slide-content bg-white text-text p-3"> <!-- Reduced padding -->
+                        <div class="text-3xl mb-1">😰</div>
+                        <h2 class="text-xl md:text-2xl font-black text-red-600 mb-2 leading-snug">
+                            AIニュースに<br>焦っていませんか？
+                        </h2>
+
+                        <div class="w-full max-w-sm space-y-2 mb-2"> <!-- Reduced margins -->
+                            <div class="bg-gray-50 flex items-center p-2 rounded-lg border border-gray-100">
+                                <span class="text-base mr-2">🗯️</span>
+                                <span class="text-xs md:text-sm font-bold text-gray-600">「やばい、乗り遅れる…」</span>
+                            </div>
+                            <div class="bg-gray-50 flex items-center p-2 rounded-lg border border-gray-100">
+                                <span class="text-base mr-2">🗯️</span>
+                                <span class="text-xs md:text-sm font-bold text-gray-600">「勉強しなきゃ…」</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t-4 border-dotted border-gray-300 w-8 mb-2"></div>
+
+                        <div>
+                            <p class="text-sm md:text-base font-bold text-primary">その不安の正体は</p>
+                            <p
+                                class="text-xl md:text-2xl font-black text-red-500 mt-1 bg-red-50 px-4 py-1 rounded inline-block">
+                                「地図」がないから
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide2', '02_課題提起.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (02_課題提起.png)
+                </button>
+            </div>
+
+            <!-- Slide 3: Core Strategy -->
+            <div class="flex flex-col gap-4">
+                <div id="slide3" class="slide-container rounded-lg">
+                    <div class="slide-content bg-primary text-white relative overflow-hidden p-6">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 text-8xl">📜</div>
+
+                        <h2 class="text-lg md:text-xl font-bold text-accent mb-4 flex items-center justify-center">
+                            <span class="mr-2">⚔️</span> 孫子の兵法をAI時代に
+                        </h2>
+
+                        <div class="w-full max-w-md mb-6">
+                            <div class="highlight-box bg-white/10 backdrop-blur border border-white/20 p-4 md:p-6">
+                                <p class="text-2xl md:text-3xl lg:text-4xl font-black leading-relaxed text-center">
+                                    「彼を知り<br>己を知れば<br>
+                                    <span class="text-accent">百戦危うからず</span>」
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-2 text-base md:text-lg font-bold opacity-90 border-b-2 border-accent pb-1">
+                            <span>🛡️</span>
+                            <span>不安を消す最強の武器</span>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide3', '03_核心戦略.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (03_核心戦略.png)
+                </button>
+            </div>
+
+            <!-- Slide 4: Know the Enemy (Fixed Alignment & Sizing) -->
+            <div class="flex flex-col gap-4">
+                <div id="slide4" class="slide-container rounded-lg border border-blue-100">
+                    <div class="slide-content bg-blue-50 relative p-3">
+                        <h2
+                            class="text-lg md:text-xl font-black text-primary mb-2 bg-white px-4 py-1 rounded-full shadow-sm border border-blue-100 inline-block">
+                            1. 彼（AI）を知る 🤖
+                        </h2>
+
+                        <div class="grid grid-cols-2 gap-2 w-full h-full mb-2">
+                            <!-- ensure h-full makes children stretch -->
+                            <!-- Left: Flow -->
+                            <div
+                                class="bg-white rounded-xl p-2 shadow-sm border-t-4 border-red-400 flex flex-col items-center justify-center text-center h-full">
+                                <div class="text-red-500 font-bold mb-1 text-xs">❌ フロー情報</div>
+                                <div class="text-2xl mb-1">🌊</div>
+                                <p class="text-sm md:text-base font-bold text-gray-600 leading-snug">
+                                    <!-- Increased size -->
+                                    ツール・新機能を<br>追うのはキリがない！
+                                </p>
+                            </div>
+
+                            <!-- Right: Stock -->
+                            <div
+                                class="bg-white rounded-xl p-2 shadow-sm border-t-4 border-blue-500 flex flex-col items-center justify-center text-center h-full">
+                                <div class="text-blue-600 font-bold mb-1 text-xs">⭕ ストック情報</div>
+                                <div class="text-2xl mb-1">🏛️</div>
+                                <p class="text-sm md:text-base font-bold text-gray-600 leading-snug">
+                                    <!-- Increased size -->
+                                    変わらない<br>「原理・基礎」を得る
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gray-800 text-white px-4 py-2 rounded-lg w-full max-w-xs text-center shadow-md mt-auto">
+                            <!-- mt-auto pushes footer to bottom, ensuring gap from grid -->
+                            <p class="text-sm md:text-base font-bold">
+                                🙈 <span class="text-accent underline">「賢い無視」</span>で守る
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide4', '04_彼を知る.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (04_彼を知る.png)
+                </button>
+            </div>
+
+            <!-- Slide 5: Know Yourself -->
+            <div class="flex flex-col gap-4">
+                <div id="slide5" class="slide-container rounded-lg border-4 border-accent">
+                    <div class="slide-content bg-white relative p-4">
+                        <h2
+                            class="text-lg md:text-xl font-black text-gray-800 mb-4 bg-accent px-6 py-1 rounded-full text-center inline-block">
+                            2. 己（人間）を知る 🧑‍🤝‍🧑
+                        </h2>
+
+                        <div class="flex items-center justify-center gap-6 md:gap-8 mb-6 w-full">
+                            <div class="flex flex-col items-center">
+                                <span class="text-3xl md:text-4xl mb-1">🤖</span>
+                                <span class="font-bold text-xs md:text-sm text-gray-500">AI</span>
+                            </div>
+                            <div class="text-2xl md:text-3xl text-gray-300">🪞</div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-3xl md:text-4xl mb-1">👱</span>
+                                <span class="font-bold text-xs md:text-sm text-gray-500">人間</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-4 rounded-xl w-full max-w-md text-center border border-blue-100">
+                            <p class="text-base md:text-lg font-bold text-primary leading-relaxed">
+                                AIができることを知ると<br>
+                                <span class="text-lg md:text-xl text-red-500 font-black">「自分たちの価値」</span><br>
+                                が逆説的に見えてくる
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide5', '05_己を知る.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (05_己を知る.png)
+                </button>
+            </div>
+
+            <!-- Slide 6: Summary -->
+            <div class="flex flex-col gap-4">
+                <div id="slide6" class="slide-container rounded-lg border border-gray-700">
+                    <div class="slide-content bg-slate-900 text-white p-6">
+                        <h2
+                            class="text-xl md:text-2xl font-black text-accent mb-6 border-b-2 border-accent pb-2 inline-block">
+                            まとめ 📝
+                        </h2>
+
+                        <div class="flex w-full max-w-lg gap-4 mb-6">
+                            <div class="flex-1 bg-slate-800 p-3 rounded-xl border border-slate-700 text-center">
+                                <div class="text-2xl md:text-3xl mb-1">🔍</div>
+                                <h3 class="text-sm md:text-base font-bold text-accent mb-0">彼を知る</h3>
+                                <p class="text-xs text-gray-300">変わらない原理</p>
+                            </div>
+                            <div class="flex-1 bg-slate-800 p-3 rounded-xl border border-slate-700 text-center">
+                                <div class="text-2xl md:text-3xl mb-1">🤔</div>
+                                <h3 class="text-sm md:text-base font-bold text-accent mb-0">己を知る</h3>
+                                <p class="text-xs text-gray-300">人間の役割</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-lg md:text-xl font-bold leading-relaxed mb-3">
+                                この「地図」があれば、<br>
+                                情報の洪水は怖くない！
+                            </p>
+                            <p
+                                class="text-xs md:text-sm text-gray-400 bg-slate-800 px-3 py-1 rounded-full inline-block">
+                                次回、「賢い無視」の具体的な方法へ 🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="downloadImage('slide6', '06_まとめ.png')"
+                    class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded transition">
+                    画像をダウンロード (06_まとめ.png)
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        async function downloadImage(elementId, fileName) {
+            const originalElement = document.getElementById(elementId);
+
+            try {
+                // Wait for fonts to be ready (like Ep02)
+                await document.fonts.ready;
+
+                // Create clone
+                const clone = originalElement.cloneNode(true);
+                const container = document.createElement('div');
+
+                container.style.position = 'fixed';
+                container.style.top = '0';
+                container.style.left = '-9999px';
+                container.style.width = originalElement.offsetWidth + 'px';
+                container.style.height = originalElement.offsetHeight + 'px';
+                container.style.zIndex = '-100';
+
+                container.appendChild(clone);
+                document.body.appendChild(container);
+
+                const canvas = await html2canvas(clone, {
+                    scale: 3, // High resolution
+                    useCORS: true,
+                    backgroundColor: null,
+                });
+
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+
+                document.body.removeChild(container);
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('画像生成エラー');
+            }
+        }
+    </script>
+</body>
+
+</html>
