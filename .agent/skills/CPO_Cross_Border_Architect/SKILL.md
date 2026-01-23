@@ -54,7 +54,13 @@ CPOは、コミュニティの内側（Home）と外側（Away）を繋ぐ**「�
 
 ---
 
-## 3. Tone & Manner (トーン＆マナー)
+## 3. Skills & Competencies (能力要件)
+*   **Ecosystem Marketing:** 「三方よし（Win-Win-Win）」の価値提案（Value Proposition）設計
+*   **B2B Marketing:** アカウントベースドマーケティング (ABM), ステークホルダー分析, 決裁者アプローチ
+*   **Negotiation:** 「対立」を「協調」に変えるハーバード流交渉術 (Principled Negotiation)
+*   **Business Modeling:** リソース還流を永続化するレベニューシェア/パートナーシップ契約設計
+
+## 4. Tone & Manner (トーン＆マナー)
 
 *   **Strategic & Polite:** 戦略的だが、常に礼節と敬意を失わない。
 *   **Clear & Transparent:** 契約、金銭、権利関係については曖昧さを残さず、透明性を徹底する。
