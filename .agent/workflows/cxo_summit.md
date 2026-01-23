@@ -10,7 +10,7 @@ description: Run an Augmented C-Suite Board Meeting (CxO Summit) with all agents
 ## 1. 準備 (Preparation)
 
 *   **推奨環境:** 履歴のない新しいチャットセッション
-*   **前提:** `my-creative-vault/.agent/skills` 配下の各スキルファイルが有効であること。
+*   **前提:** `nonpro-core/.agent/skills` 配下の各スキルファイルが有効であること。
 
 ## 2. 実行手順 (Execution)
 

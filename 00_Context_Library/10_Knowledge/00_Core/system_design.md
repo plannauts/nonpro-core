@@ -1,4 +1,4 @@
-# AI統合型クリエイティブ環境「my-creative-vault」構築レポート
+# AI統合型クリエイティブ環境「nonpro-core」構築レポート
 
 ## 1. コンセプト：Headless Obsidian Workflow
 従来の「メモアプリ（Notion）で管理し、チャット（Web）で生成する」スタイルから脱却し、**「IDE（Antigravity）で製造し、Obsidianで脳内を可視化する」**というエンジニアリング・スタイルへ移行しました。
