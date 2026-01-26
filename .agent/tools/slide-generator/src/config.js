@@ -1,8 +1,25 @@
 // src/config.js
 
 const CONFIG = {
-  // Markdownファイルを同期するフォルダID (後でユーザーが設定)
-  DRIVE_FOLDER_ID: 'REPLACE_WITH_YOUR_FOLDER_ID',
+  /**
+   * Drive フォルダ ID を取得する（プロパティストアから）
+   * @returns {string}
+   */
+  getDriveFolderId: function() {
+    const properties = PropertiesService.getScriptProperties();
+    const folderId = properties.getProperty('DRIVE_FOLDER_ID');
+    return folderId || null;
+  },
+
+  /**
+   * Drive フォルダ ID を設定する（プロパティストアに保存）
+   * @param {string} folderId
+   */
+  setDriveFolderId: function(folderId) {
+    const properties = PropertiesService.getScriptProperties();
+    properties.setProperty('DRIVE_FOLDER_ID', folderId);
+    console.log('✓ Drive Folder ID saved: ' + folderId);
+  },
 
   // レイアウト定義 (解析ログに基づく)
   LAYOUTS: {
@@ -55,3 +72,8 @@ const CONFIG = {
     '[M]': 'MESSAGE'
   }
 };
+
+// GAS環境とNode.js環境の両方で動作するようにエクスポート
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = CONFIG;
+}
