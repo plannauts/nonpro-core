@@ -10,6 +10,7 @@ function onOpen() {
 
   ui.createMenu('AntiGravity')
     .addItem('Import from Drive', 'showImportDialog')
+    .addItem('Export to Drive', 'showExportDialog')
     .addSeparator()
     .addItem('Settings', 'showSettings')
     .addItem('About', 'showAbout')
@@ -42,6 +43,52 @@ function showImportDialog() {
     }
   } else {
     console.log('Import cancelled');
+  }
+}
+
+/**
+ * エクスポート用のダイアログを表示
+ */
+function showExportDialog() {
+  const ui = SlidesApp.getUi();
+
+  const result = ui.prompt(
+    'Antigravity Slides - Export',
+    'プレゼンテーションファイル名を入力してください:\n(例: Sample_Presentation)\n\n' +
+    '※ 同名の .md ファイルが作成/更新されます。',
+    ui.ButtonSet.OK_CANCEL
+  );
+
+  const button = result.getSelectedButton();
+  const fileName = result.getResponseText();
+
+  if (button === ui.Button.OK) {
+    if (fileName && fileName.trim() !== '') {
+      try {
+        console.log('Export requested: ' + fileName);
+        const message = exportSlidesToMarkdown(fileName.trim());
+
+        ui.alert(
+          'エクスポート完了',
+          message,
+          ui.ButtonSet.OK
+        );
+
+        console.log('✓ Export completed successfully');
+      } catch (e) {
+        ui.alert(
+          'エラー',
+          'エクスポートに失敗しました。\n\n' +
+          'エラー: ' + e.message,
+          ui.ButtonSet.OK
+        );
+        console.error('Export failed: ' + e.message);
+      }
+    } else {
+      ui.alert('エラー', 'ファイル名を入力してください。', ui.ButtonSet.OK);
+    }
+  } else {
+    console.log('Export cancelled');
   }
 }
 
