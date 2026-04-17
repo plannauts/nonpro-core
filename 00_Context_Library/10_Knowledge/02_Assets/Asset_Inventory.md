@@ -1,6 +1,6 @@
 # Asset Inventory: The Resources (As-Is)
 
-**Last Updated:** 2026-01-12
+**Last Updated:** 2026-04-17
 **Status:** ✅ V4.1 (Integrated & Restructured)
 **Source:** Perplexity Research (1st & 2nd), Internal Data (Gemini)
 **Purpose:** 戦略実行のために利用可能な有形・無形の資本を棚卸しする。
@@ -67,6 +67,7 @@
 ### C. 外部評価・権威性 (Authority)
 *   **NewsPicks:** プロピッカー (2023/4就任)。「深掘り！プロの学び」特集掲載。
 *   **LinkedIn Learning:** 認定トレーナー。
+*   **福岡県SDGs登録制度:** 登録事業者 (2026/04 登録完了)。
 
 ---
 
