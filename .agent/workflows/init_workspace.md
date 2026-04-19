@@ -25,7 +25,7 @@ Git初期化、各種ドキュメント（README.md / AGENTS.md）の生成、Gi
      - **AI/ツール関連:** `.claude`, `.gemini`, `.agent/scratch/`, `.gemini/`
      - **環境・秘匿情報:** `.env`, `*.local`, `config.json`（秘密情報を含む場合）
      - **OS関連:** `Thumbs.db`, `.DS_Store`
-     - **開発関連:** `node_modules/`, `__pycache__/`, `.vscode/`
+     - **開発関連:** `node_modules/`, `__pycache__/`, `.vscode/`, `*.code-workspace`
    
    *エラーハンドリング:*
    Gitコマンドが失敗した場合は、権限の問題や既に初期化済みでないかを確認し、ユーザーに状況を報告してください。

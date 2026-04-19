@@ -54,6 +54,7 @@ Antigravity のチャット欄で `@` を入力し、スキル名の一部（例
 
 | コマンド | 説明 | 主な出力 |
 |:---|:---|:---|
+| `/init_workspace` | 新規プロジェクト初期化 | Git初期化、README、AGENTS.md、.gitignore |
 | `/cxo_summit` | CXO会議の開催 | 各専門家の意見集約、議事録 |
 | `/create_event_plan` | イベント企画書の生成 | 企画書、Peatix説明文案 |
 | `/create_peatix_page` | Peatixページ作成 | イベントページ用テキスト |
@@ -108,5 +109,5 @@ Antigravity のチャット欄で `/` を入力すると利用可能なワーク
 
 ---
 
-**Last Updated**: 2026-03-22
+**Last Updated**: 2026-04-19
 **Maintained by**: Antigravity & Team
