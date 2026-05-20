@@ -7,24 +7,39 @@
 
 以下の4つのツールを順にインストール・セットアップしてください。
 
-### [1] Google Antigravity のインストール
-AIとのペアプログラミングを実現する統合開発環境（IDE）です。
-- **入手方法**: [https://antigravity.google/](https://antigravity.google/) からダウンロードしてインストールしてください。
+### [1] Antigravity IDE のインストール
+AIエージェントを統合した統合開発環境（IDE）です。
+- **入手方法**: [https://antigravity.google/](https://antigravity.google/) から「Antigravity IDE」をダウンロードしてインストールしてください。
 - **備考**: VS Codeベースのエディタとして動作します。既存のVS Code設定を引き継ぐことも可能です。
+- **重要 (ログイン認証)**: インストール完了後、**IDE内でGoogleアカウントにログイン（認証）を済ませてください**。これは後述する「Antigravity CLI」を動作させるための必須前提条件となります。
 
 ### [2] Node.js のインストール
-AI CLIツール（Gemini CLI, Claude Code）の実行に必要です。
+本プロジェクト共通の管理ツール（安全装備など）の実行に必要です。
 - **入手方法**: [公式サイト](https://nodejs.org/) から「LTS（推奨版）」をダウンロードしてインストールしてください。
+- **備考**: 後述する「Antigravity CLI」の動作自体はNode.jsなしでも動きますが、プロジェクト全体の安全な運用のために必ずインストールしてください。
 
 ### [3] AI CLIツールの導入
-ターミナルからAIを活用するためのCLIツールです。`Node.js` インストール後、ターミナル（コマンドプロンプトまたはPowerShell）で以下のコマンドを実行してインストールしてください。
+ターミナルからAIを活用するためのCLIツールです。
 
-- **Gemini CLI**
-  - Google製のAI CLIツールです。
-  - インストールコマンド (Node.jsが必要):
-    ```bash
-    npm install -g @google/gemini-cli
+- **Antigravity CLI**
+  - Google製のターミナル向けAI CLIツール（旧Gemini CLIの後継）です。
+  - **Windows (PowerShell) 推奨インストールコマンド**:
+    ```powershell
+    irm https://antigravity.google/cli/install.ps1 | iex
     ```
+  - **macOS / Linux 推奨インストールコマンド**:
+    ```bash
+    curl -fsSL https://antigravity.google/cli/install.sh | bash
+    ```
+  - **代替のインストール方法 (npm)**:
+    ```bash
+    npm install -g @google/antigravity-cli
+    ```
+  - **起動コマンド**:
+    ```bash
+    agy
+    ```
+
 - **Claude Code**
   - Anthropic製のAIコーディングアシスタントです。
   - インストールコマンド:
@@ -36,7 +51,7 @@ AI CLIツール（Gemini CLI, Claude Code）の実行に必要です。
 AI CLIを使って、対話的にセットアップを進めます。以下の通りに依頼してみてください。
 
 #### 1. Gitのインストール
-ターミナルで `gemini` (または `claude`) を起動し、以下のように入力します。
+ターミナルで `agy` (または `claude`) を起動し、以下のように入力します。
 
 > **依頼プロンプト**:
 > 「WindowsでGitをインストールして」
@@ -104,7 +119,7 @@ AIが案内する手順の例:
 
 ### ステップ2: リポジトリのクローン (`nonpro-core` / パブリック)
 本プロジェクトでは、共通基盤である `nonpro-core` が全ドキュメントの中核となります。まずはこれをクローンします。（パブリックリポジトリのため、誰でもすぐに可能です）
-ターミナルで作業フォルダに移動し、`gemini` (または `claude`) を起動して依頼します。
+ターミナルで作業フォルダに移動し、`agy` (または `claude`) を起動して依頼します。
 
 > **依頼プロンプト**:
 > 「GitHubから `plannauts/nonpro-core` をこのフォルダにクローンして」
@@ -123,27 +138,27 @@ git clone https://github.com/plannauts/nonpro-core.git
 2. **招待を承認する**
    GitHubから招待メールが届く、または [GitHubのNotifications](https://github.com/notifications) に招待が届くので、**"Accept invitation"** をクリックして参加を承認します。
 3. **リポジトリのクローン**
-   再度ターミナルを開き、AIに以下のように依頼して `nonpro-core` と同じ階層にクローンします。
+   再度ターミナルを開き、AI（agy または claude）に以下のように依頼して `nonpro-core` と同じ階層にクローンします。
 
 > **依頼プロンプト**:
 > 「続けて、GitHubから `plannauts/nonpro-sandbox` のリポジトリをクローンして」
 
 実行されるコマンド例: `git clone https://github.com/plannauts/nonpro-sandbox.git`
 
-### ステップ4: Antigravity でワークスペースを作成する
-必要なリポジトリ（`nonpro-core` と `nonpro-sandbox`）が揃ったら、Antigravityで「マルチルートワークスペース」を作成して一つにまとめます。
+### ステップ4: Antigravity IDE でワークスペースを作成する
+必要なリポジトリ（`nonpro-core` と `nonpro-sandbox`）が揃ったら、Antigravity IDEで「マルチルートワークスペース」を作成して一つにまとめます。
 
-1. Antigravity を起動し、`File` > `Open Folder...` で `nonpro-sandbox` フォルダを開く。
+1. Antigravity IDE を起動し、`File` > `Open Folder...` で `nonpro-sandbox` フォルダを開く。
 2. `File` > `Add Folder to Workspace...` を選択し、`nonpro-core` フォルダを追加する。
 3. `File` > `Save Workspace As...` を選択し、`nonpro-sandbox.code-workspace` として保存する。
 
 以降は、この `.code-workspace` ファイルを開くことで、両方のリポジトリが読み込まれた状態で作業を開始できます。
 
-### ステップ5: Antigravity のセキュリティ設定
+### ステップ5: Antigravity IDE のセキュリティ設定
 安全に開発を行うため、以下のガイドラインに従ってセキュリティ設定を確認してください。
-- [Antigravity セキュリティ・プライバシー 利用ガイドライン](./Antigravity%20セキュリティ・プライバシー%20利用ガイドライン.md)
+- [Antigravity セキュリティ・プライバシー 利用ガイドライン](./01_Security_Guidelines.md)
 
-特に **Settings** 画面で以下の点を確認しましょう:
+特に Antigravity IDE の **Settings** 画面で以下の点を確認しましょう:
 - `Account > Enable Telemetry`: **OFF** (推奨)
 - `Agent > Terminal Command Auto Execution`: **Request Review** (推奨)
 
@@ -151,7 +166,7 @@ git clone https://github.com/plannauts/nonpro-core.git
 
 ## 3. 動作確認 (Skill Verification)
 環境構築ができたら、`nonpro-core` のAIスキルが正しく読み込まれているか確認しましょう。
-Antigravityのチャット欄で **`@`** (アットマーク) を入力すると、利用可能なスキルの一覧が表示されます。
+Antigravity IDEのチャット欄で **`@`** (アットマーク) を入力すると、利用可能なスキルの一覧が表示されます。
 
 > **依頼プロンプト**:
 > 「`@CCO` と入力して候補から `nonpro-core/CCO_Community_Architect` を選択し、『簡単な自己紹介をして』と依頼」
@@ -173,7 +188,7 @@ CCO（最高コミュニティ責任者）として振る舞うAIから応答が
 
 ## 4. Sandboxを用いたGit/GitHub体験 (チュートリアル)
 
-Antigravityとワークスペースの準備が整ったら、`nonpro-sandbox` を使って、チーム開発の一連の流れ（Git/GitHubの基本操作）をCLI（ターミナル）上で練習してみましょう。参加者自身が自ら課題（イシュー）を立てて解決する流れを体験します。
+Antigravity IDEとワークスペースの準備が整ったら、`nonpro-sandbox` を使って、チーム開発の一連の流れ（Git/GitHubの基本操作）をCLI（ターミナル）上で練習してみましょう。参加者自身が自ら課題（イシュー）を立てて解決する流れを体験します。
 
 ### [1] イシュー（課題）を立てる
 チーム開発では「何をするか」を明確にするため、作業前にイシューを作ります。
@@ -193,7 +208,7 @@ GitHub CLI (`gh`コマンド) を使うとターミナルから直接作成で�
 ※ 実行されるコマンド例: `cd nonpro-sandbox` その後 `git checkout -b practice/takahashi`
 
 ### [3] コミットを進める（変更の保存）
-エディタ（Antigravity）でファイルを作成・編集します。
+エディタ（Antigravity IDE）でファイルを作成・編集します。
 （例: `nonpro-sandbox` フォルダ内に `members` フォルダを作成し、その中に `あなたの名前.md` という自己紹介ファイルを作ってみましょう）
 作業が終わったら、変更を「コミット（セーブ）」します。
 
@@ -275,7 +290,7 @@ git commit -m "Update concept draft for 2026"
 git push origin planning/update-concept
 ```
 
-### [3] プルリクエスト (PR) の作成
+### [4] プルリクエスト (PR) の作成
 GitHub上で、あなたのブランチから `main` ブランチへ「プルリクエスト」を作成します。
 AIに依頼して、PR作成用のURLを発行してもらうことも可能です。
 
