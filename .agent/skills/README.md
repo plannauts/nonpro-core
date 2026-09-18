@@ -9,6 +9,7 @@ AIエージェント（Antigravity / Claude Code）が特定の専門家とし�
 | ディレクトリ | 役割 | ペルソナ |
 |:---|:---|:---|
 | `CSO_Strategy/` | 最高戦略責任者 | 戦略思考、ビジネスモデル設計 |
+| `CTO_Karpathy/` | 最高技術責任者 | 第一原理思考、バイブコーディング、LLM OS |
 | `CCO_Community_Architect/` | 最高コミュニティ責任者 | コミュニティ文化、イベント企画 |
 | `CEDO_Editor/` | 最高編集責任者 | 編集力、表現の磨き込み |
 | `CLO_Learning_Architect/` | 最高学習責任者 | 学習体験設計、教育理論 |
