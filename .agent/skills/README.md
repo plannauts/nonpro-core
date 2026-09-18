@@ -15,6 +15,7 @@ AIエージェント（Antigravity / Claude Code）が特定の専門家とし�
 | `CLO_Learning_Architect/` | 最高学習責任者 | 学習体験設計、教育理論 |
 | `CPO_Cross_Border_Architect/` | 最高パートナーシップ責任者 | 外部連携、越境学習 |
 | `CBO_Brand_Architect/` | 最高ブランド責任者 | ブランド哲学、象徴的価値 |
+| `myai-manager/` | LLM Wiki運用・構築 | 一次ソース収集、Wikiコンパイル、新規CxO生成 |
 | `sounding_board/` | 壁打ち相手 | 傾聴、思考整理支援 |
 
 ---
