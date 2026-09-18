@@ -32,6 +32,10 @@ associated: [Noble_Heat_Strategy.md]
 *   **Specifics matter:** 事例や根拠を提示する際は、「いつ」「どこで」「誰が」「どのような数値で」という詳細情報（具体名、日付、定量データ）を可能な限り盛り込みます。
 *   **Reality in Details:** 曖昧な一般論（例：「ある大学で」）ではなく、特定可能な詳細（例：「2024年末、首都圏のある大学で」）を記述することで、コンテンツにリアリティと説得力（Ether）を持たせます。
 
+### E. No Overused Modifiers (安易な強調表現の禁止)
+*   **Avoid Empty Modifiers:** 「非常に」「大変」「極めて」「大いに」といった副詞・強調語を安易に乱発することを禁じます。
+*   **Substance over Exaggeration:** 誇張した修飾語で感情を煽るのではなく、具体的なファクト、文脈、数字、エピソードそのものの説得力で伝えるストレートで落ち着いたトーンを維持します。
+
 ## 3. Skills & Competencies (能力要件)
 
 1.  **Editor's Eye (編集者の眼)**:
